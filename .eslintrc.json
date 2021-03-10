@@ -40,7 +40,8 @@
       }
     ],
     "prettier/prettier": "error",
-    "camelcase": "off"
+    "camelcase": "off",
+    "react/prop-types": 0
   },
   "settings": {
     "import/resolver": {

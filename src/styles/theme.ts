@@ -41,12 +41,12 @@ interface FontTypesInterface {
 }
 
 export const fontTypes: FontTypesInterface = {
-  heading5: {
+  heading: {
     fontFamily: 'Nunito Sans Bold',
     fontSize: 24,
     lineHeight: '33.6px',
   },
-  subtitle1: {
+  subtitle: {
     fontFamily: 'Nunito Sans Bold',
     fontSize: 14,
     fontWeight: 700,
