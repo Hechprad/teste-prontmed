@@ -1,34 +1,26 @@
-import { useState, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { v4 } from 'uuid'
 
-import api from 'services/api'
-import SetTodosList from 'store/modules/todos/actions'
+import Text from 'components/Text'
+import useGetTodos from 'hooks/useGetTodos'
 
 import Wrapper from './styles'
 
 const Home: React.FC = () => {
-  const dispatch = useDispatch()
-  const [todos, setTodos] = useState([])
+  const { todos } = useGetTodos()
 
-  useEffect(() => {
-    async function loadTodos(): Promise<void> {
-      const response = await api.get('/todos')
-
-      setTodos(response.data)
-    }
-
-    if (todos.length === 0) {
-      loadTodos()
-    }
-  }, [todos])
-
-  useEffect(() => {
-    if (todos.length > 0) {
-      dispatch(SetTodosList(todos))
-    }
-  }, [todos, dispatch])
-
-  return <Wrapper>oi</Wrapper>
+  return (
+    <Wrapper>
+      <ul>
+        {todos.length
+          ? todos.map((todo) => (
+              <li key={v4()}>
+                <Text>{todo.name}</Text>
+              </li>
+            ))
+          : null}
+      </ul>
+    </Wrapper>
+  )
 }
 
 export default Home
