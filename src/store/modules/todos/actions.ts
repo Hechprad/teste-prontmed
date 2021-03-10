@@ -1,13 +1,21 @@
-import { Types, TodosInterface } from './types'
+import { Types, TodoInterface } from './types'
 
-export default function SetTodosList(
-  payload: TodosInterface[]
+export function SetTodosList(
+  payload: TodoInterface[]
 ): {
   type: string
-  payload: TodosInterface[]
+  payload: TodoInterface[]
 } {
   return {
     type: Types.SET_TODOS,
     payload,
+  }
+}
+
+export function SetTodosListError(): {
+  type: string
+} {
+  return {
+    type: Types.SET_TODOS_ERROR,
   }
 }

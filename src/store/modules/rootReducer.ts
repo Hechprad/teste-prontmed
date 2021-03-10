@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
 
-import todos from 'store/modules/todos/reducer'
+import todosList from 'store/modules/todos/reducer'
 
-export default combineReducers({ todos })
+export default combineReducers({ todosList })

@@ -1,8 +1,9 @@
 export const Types = {
   SET_TODOS: 'SET_TODOS',
+  SET_TODOS_ERROR: 'SET_TODOS_ERROR',
 }
 
-export interface TodosInterface {
+export interface TodoInterface {
   id: number
   name: string
   completed: boolean
@@ -12,5 +13,10 @@ export interface TodosInterface {
 
 export interface ActionInterface {
   type: keyof typeof Types
-  payload: TodosInterface[]
+  payload: TodoInterface[]
+}
+
+export interface TodoState {
+  todos: TodoInterface[]
+  hasError: boolean
 }
