@@ -12,7 +12,7 @@ const htmlTag: {
 }
 
 const Text: React.FC<t.TextProps> = ({
-  type = 'body1',
+  type = 'body',
   bold = false,
   color = 'black',
   children,
