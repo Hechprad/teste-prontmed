@@ -1,7 +1,7 @@
 import React from 'react'
 
-import * as t from './types'
 import TextStyle from './styles'
+import * as t from './types'
 
 const htmlTag: {
   [key: string]: 'h1' | 'p'

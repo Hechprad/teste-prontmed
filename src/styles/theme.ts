@@ -28,7 +28,7 @@ export const themeColors = {
 
 export const shadows = {
   shadow1:
-    '0px 0px 1px 1px rgba(53, 124, 173, 0.02), 0px 6px 14px 2px rgba(53, 124, 173, 0.06)',
+    '0px 0px 1px 1px rgba(53, 124, 173, 0.2), 0px 6px 14px 2px rgba(53, 124, 173, 0.06)',
 }
 
 interface FontTypesInterface {

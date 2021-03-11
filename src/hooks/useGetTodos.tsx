@@ -7,7 +7,11 @@ import { SetTodosList, SetTodosListError } from 'store/modules/todos/actions'
 
 import { TodoState } from 'store/modules/todos/types'
 
-const useGetTodos = (): TodoState => {
+interface UseGetTodos extends TodoState {
+  loadTodos: () => Promise<void>
+}
+
+const useGetTodos = (): UseGetTodos => {
   const dispatch = useDispatch()
 
   const { todos, hasError } = useTypedSelector((store) => ({
@@ -22,14 +26,17 @@ const useGetTodos = (): TodoState => {
         (response) =>
           response.data.length > 0 && dispatch(SetTodosList(response.data))
       )
-      .catch(() => dispatch(SetTodosListError()))
+      .catch((e) => {
+        dispatch(SetTodosListError())
+        throw new Error(e)
+      })
   }, [dispatch])
 
   React.useEffect(() => {
     loadTodos()
   }, [loadTodos])
 
-  return { todos, hasError }
+  return { todos, hasError, loadTodos }
 }
 
 export default useGetTodos
