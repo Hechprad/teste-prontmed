@@ -28,7 +28,6 @@ const useGetTodos = (): UseGetTodos => {
       )
       .catch((e) => {
         dispatch(SetTodosListError())
-        throw new Error(e)
       })
   }, [dispatch])
 
