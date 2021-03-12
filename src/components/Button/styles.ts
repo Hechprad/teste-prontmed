@@ -9,7 +9,7 @@ const StyledButton = styled.button<ButtonProps>`
   padding: ${({ theme: { spacing } }) => spacing(2)}px;
 
   border: none;
-  background-color: ${({ theme: { colors } }) => colors.blue1};
+  background-color: ${({ theme: { colors } }) => colors.blue};
 
   &:hover {
     filter: brightness(95%);

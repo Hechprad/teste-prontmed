@@ -1,0 +1,562 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should renders correctly 1`] = `
+Array [
+  <div
+    className="sc-lmoMRL hFYmoP"
+  >
+    <h1
+      className="sc-bdfBwQ dbsWih sc-iJuUWI kfIkBd"
+      color="black"
+      type="heading"
+    >
+      All Tasks
+    </h1>
+    <div
+      className="sc-fubCfw dWVklU"
+    >
+      <div
+        className="sc-pFZIQ kCMVVB"
+        onClick={[Function]}
+      >
+        <svg
+          className="sc-kEjbxe eCxaPN"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="11"
+            cy="11"
+            r="8"
+          />
+          <line
+            x1="21"
+            x2="16.65"
+            y1="21"
+            y2="16.65"
+          />
+        </svg>
+        <p
+          className="sc-bdfBwQ fvAVWZ"
+          color="blue"
+          type="subtitle"
+        >
+          Search
+        </p>
+      </div>
+      <div
+        className="sc-pFZIQ kCMVVB"
+        onClick={[Function]}
+      >
+        <svg
+          className="sc-jrAGrp bOZxyS"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="12"
+            cy="12"
+            r="10"
+          />
+          <line
+            x1="12"
+            x2="12"
+            y1="8"
+            y2="16"
+          />
+          <line
+            x1="8"
+            x2="16"
+            y1="12"
+            y2="12"
+          />
+        </svg>
+        <p
+          className="sc-bdfBwQ fvAVWZ"
+          color="blue"
+          type="subtitle"
+        >
+          Add todo
+        </p>
+      </div>
+    </div>
+    <ul
+      className="sc-giIncl fCIYYg"
+    >
+      <li
+        className="sc-crrsfI nHtIm"
+      >
+        <div
+          className="sc-dQppl dJoByg"
+        >
+          <svg
+            checked={false}
+            className="sc-kstrdz fkbxLL"
+            fill="none"
+            height="1em"
+            onClick={[Function]}
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+            />
+            <polyline
+              points="22 4 12 14.01 9 11.01"
+            />
+          </svg>
+          <p
+            className="sc-bdfBwQ deLoMA"
+            color="black"
+            type="body"
+          >
+            ID: 
+            2
+             - 
+            new todo 2
+          </p>
+        </div>
+        <div
+          className="sc-bqyKva joiINn"
+        >
+          <svg
+            className="sc-fodVxV eHnlQc"
+            fill="none"
+            height="1em"
+            onClick={[Function]}
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 20h9"
+            />
+            <path
+              d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+            />
+          </svg>
+          <svg
+            className="sc-hBEYos licVqv"
+            fill="none"
+            height="1em"
+            onClick={[Function]}
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polyline
+              points="3 6 5 6 21 6"
+            />
+            <path
+              d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+            />
+            <line
+              x1="10"
+              x2="10"
+              y1="11"
+              y2="17"
+            />
+            <line
+              x1="14"
+              x2="14"
+              y1="11"
+              y2="17"
+            />
+          </svg>
+        </div>
+      </li>
+      <li
+        className="sc-crrsfI nHtIm"
+      >
+        <div
+          className="sc-dQppl dJoByg"
+        >
+          <svg
+            checked={true}
+            className="sc-kstrdz clxhPx"
+            fill="none"
+            height="1em"
+            onClick={[Function]}
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+            />
+            <polyline
+              points="22 4 12 14.01 9 11.01"
+            />
+          </svg>
+          <p
+            className="sc-bdfBwQ deLoMA"
+            color="black"
+            type="body"
+          >
+            ID: 
+            1
+             - 
+            new todo 1
+          </p>
+        </div>
+        <div
+          className="sc-bqyKva joiINn"
+        >
+          <svg
+            className="sc-fodVxV eHnlQc"
+            fill="none"
+            height="1em"
+            onClick={[Function]}
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 20h9"
+            />
+            <path
+              d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+            />
+          </svg>
+          <svg
+            className="sc-hBEYos licVqv"
+            fill="none"
+            height="1em"
+            onClick={[Function]}
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polyline
+              points="3 6 5 6 21 6"
+            />
+            <path
+              d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+            />
+            <line
+              x1="10"
+              x2="10"
+              y1="11"
+              y2="17"
+            />
+            <line
+              x1="14"
+              x2="14"
+              y1="11"
+              y2="17"
+            />
+          </svg>
+        </div>
+      </li>
+    </ul>
+  </div>,
+  <div
+    className="sc-dlfnbm cEmwKr"
+  >
+    <div
+      className="sc-hKgILt hNSNgx"
+      onClick={[Function]}
+    />
+    <div
+      className="sc-eCssSg fdbUnc"
+      size="sm"
+    >
+      <div
+        className="sc-gKsewC dElHde"
+      >
+        <p
+          className="sc-bdfBwQ deLoMA sc-bkzZxe jGCbDc"
+          color="black"
+          type="body"
+        >
+          Add new todo
+        </p>
+      </div>
+      <div
+        className="sc-jSgupP kDIAus"
+      >
+        <div
+          className="sc-fFubgz bqIaKo"
+        >
+          <input
+            className="sc-iqHYGH egqCRi"
+            onChange={[Function]}
+            placeholder="New todo name"
+            value=""
+          />
+          <button
+            className="sc-gsTCUz exuHsw sc-idOhPF kTJAgA"
+            disabled={true}
+            onClick={[Function]}
+          >
+            <svg
+              className="sc-dIUggk dozoRS"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              style={
+                Object {
+                  "color": undefined,
+                }
+              }
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+              />
+              <line
+                x1="12"
+                x2="12"
+                y1="8"
+                y2="16"
+              />
+              <line
+                x1="8"
+                x2="16"
+                y1="12"
+                y2="12"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-dlfnbm cEmwKr"
+  >
+    <div
+      className="sc-hKgILt hNSNgx"
+      onClick={[Function]}
+    />
+    <div
+      className="sc-eCssSg fdbUnc"
+      size="sm"
+    >
+      <div
+        className="sc-gKsewC dElHde"
+      >
+        <p
+          className="sc-bdfBwQ deLoMA sc-bBXqnf hjVzmJ"
+          color="black"
+          type="body"
+        >
+          Search todo by ID
+        </p>
+      </div>
+      <div
+        className="sc-jSgupP kDIAus"
+      >
+        <div
+          className="sc-fKFyDc eOnbXh"
+        >
+          <input
+            className="sc-iqHYGH egqCRi sc-iwyYcG bfOtRt"
+            onChange={[Function]}
+            placeholder="TODO ID"
+            value=""
+          />
+          <button
+            className="sc-gsTCUz exuHsw sc-cxFLnm kYSzYh"
+            disabled={false}
+            onClick={[Function]}
+          >
+            Search
+          </button>
+        </div>
+        <div
+          className="sc-fKFyDc eOnbXh"
+        >
+          <li
+            className="sc-crrsfI nHtIm"
+          >
+            <div
+              className="sc-dQppl dJoByg"
+            />
+            <div
+              className="sc-bqyKva joiINn"
+            >
+              <svg
+                className="sc-hBEYos licVqv"
+                fill="none"
+                height="1em"
+                onClick={[Function]}
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                style={
+                  Object {
+                    "color": undefined,
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polyline
+                  points="3 6 5 6 21 6"
+                />
+                <path
+                  d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                />
+                <line
+                  x1="10"
+                  x2="10"
+                  y1="11"
+                  y2="17"
+                />
+                <line
+                  x1="14"
+                  x2="14"
+                  y1="11"
+                  y2="17"
+                />
+              </svg>
+            </div>
+          </li>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-dlfnbm cEmwKr"
+  >
+    <div
+      className="sc-hKgILt hNSNgx"
+      onClick={[Function]}
+    />
+    <div
+      className="sc-eCssSg fdbUnc"
+      size="sm"
+    >
+      <div
+        className="sc-gKsewC dElHde"
+      >
+        <p
+          className="sc-bdfBwQ deLoMA sc-dmlrTW gKMqzc"
+          color="black"
+          type="body"
+        >
+          Update todo name
+        </p>
+      </div>
+      <div
+        className="sc-jSgupP kDIAus"
+      >
+        <div
+          className="sc-hHftDr cQEanm"
+        >
+          <p
+            className="sc-bdfBwQ deLoMA"
+            color="black"
+            type="body"
+          >
+            Todo ID: 
+            0
+          </p>
+          <input
+            className="sc-iqHYGH egqCRi"
+            onChange={[Function]}
+            placeholder="New name"
+            value=""
+          />
+          <button
+            className="sc-gsTCUz exuHsw sc-kfzAmx bqbZcu"
+            disabled={true}
+            onClick={[Function]}
+          >
+            Update
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;

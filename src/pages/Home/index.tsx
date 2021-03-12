@@ -11,7 +11,7 @@ import AddDropdown from './Dropdowns/AddDropdown'
 import EditDropdown from './Dropdowns/EditDropdown'
 import SearchDropdown from './Dropdowns/SearchDropdown'
 
-import { ButtonWrapper, Content, LoadingIcon, Title, Ul } from './styles'
+import { ButtonWrapper, Content, Loading, Title, Ul } from './styles'
 
 const Home: React.FC = () => {
   const { checkTodo } = useCheckTodo()
@@ -66,7 +66,7 @@ const Home: React.FC = () => {
     </ButtonWrapper>
   )
 
-  const renderLoading = () => <LoadingIcon />
+  const renderLoading = () => <Loading />
 
   const getContent = () => {
     if (isLoading) {

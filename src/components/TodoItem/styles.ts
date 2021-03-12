@@ -31,7 +31,7 @@ export const CheckIcon = styled(FiCheckCircle)<{ checked: boolean }>`
   min-height: 24px;
   margin-right: ${({ theme: { spacing } }) => spacing(2)}px;
   color: ${({ checked, theme: { colors } }) =>
-    checked ? colors.green1 : colors.gray1};
+    checked ? colors.green : colors.gray1};
 `
 
 export const TrashIcon = styled(FiTrash2)`
