@@ -56,7 +56,7 @@ export const DropdownContent = styled.div<t.DropdownContent>`
 
 export const DropdownChildren = styled.div`
   height: 100%;
-  overflow: auto;
+  overflow: none;
 `
 
 export const Header = styled.div`

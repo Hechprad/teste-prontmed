@@ -13,6 +13,7 @@ import {
 import TodoItemProps from './types'
 
 const TodoItem: React.FC<TodoItemProps> = ({
+  id,
   title,
   checked,
   handleCheckClick,
@@ -23,7 +24,9 @@ const TodoItem: React.FC<TodoItemProps> = ({
   <Li {...rest}>
     <LeftContent>
       <CheckIcon checked={checked} onClick={() => handleCheckClick()} />
-      <Text>{title}</Text>
+      <Text>
+        ID: {id} - {title}
+      </Text>
     </LeftContent>
     <RightContent>
       <EditIcon onClick={() => handleEditClick()} />
