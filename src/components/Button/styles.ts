@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import ButtonProps from './types'
 
@@ -9,7 +9,7 @@ const StyledButton = styled.button<ButtonProps>`
   padding: ${({ theme: { spacing } }) => spacing(2)}px;
 
   border: none;
-  background-color: ${({ theme: { colors } }) => colors.blue1};
+  background-color: ${({ theme: { colors } }) => colors.blue};
 
   &:hover {
     filter: brightness(95%);
@@ -18,6 +18,13 @@ const StyledButton = styled.button<ButtonProps>`
   &:active {
     filter: brightness(90%);
   }
+
+  ${({ theme: { colors }, disabled }) =>
+    disabled &&
+    css`
+      background-color: ${colors.gray2};
+      cursor: not-allowed;
+    `};
 `
 
 export default StyledButton

@@ -41,7 +41,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
     -ms-overflow-style: scrollbar;
     background-color: transparent;
-    color: #56504c
+    color: #000
   }
 
   html.noOverflow {
@@ -58,7 +58,7 @@ export default createGlobalStyle`
   }
 
   ::selection {
-    background: #429BD8;
+    background: #fff;
     color: #fff;
   }
 

@@ -19,9 +19,6 @@ const useCheckTodo = (): UseCheckTodo => {
           completed: !todo.completed,
         })
         .then(() => loadTodos())
-        .catch((e) => {
-          throw new Error(e)
-        })
     },
     [loadTodos]
   )

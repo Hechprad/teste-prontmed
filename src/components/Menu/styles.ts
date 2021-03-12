@@ -28,11 +28,11 @@ export const Icon = styled.div`
 export const AddTodoIcon = styled(FiPlusCircle)`
   min-width: 24px;
   min-height: 24px;
-  color: ${({ theme: { colors } }) => colors.blue1};
+  color: ${({ theme: { colors } }) => colors.blue};
 `
 
 export const SearchTodoIcon = styled(FiSearch)`
   min-width: 24px;
   min-height: 24px;
-  color: ${({ theme: { colors } }) => colors.blue1};
+  color: ${({ theme: { colors } }) => colors.blue};
 `

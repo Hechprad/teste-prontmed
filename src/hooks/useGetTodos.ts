@@ -7,7 +7,7 @@ import {
   SetTodosList,
   SetTodosListIsLoading,
   SetTodosListError,
-} from 'store/modules/todos/actions'
+} from 'store/modules/todos/action'
 
 import { TodoState } from 'store/modules/todos/types'
 

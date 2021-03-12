@@ -4,8 +4,6 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     colors: { [key in keyof typeof themeColors]: string }
     fontTypes: { [key in keyof typeof fontTypes]: string }
-    fontFamily: string
-    gutter: number
     shadows: { [key in keyof typeof shadows]: string }
     spacing: (px: number) => number
   }
@@ -13,15 +11,12 @@ declare module 'styled-components' {
 
 export const themeColors = {
   black: '#0F0F0F',
-  blue1: '#4989b5',
+  blue: '#4989b5',
   gray1: '#E7E7E7',
   gray2: '#9f9f9f',
-  green1: '#12c16c',
-  red1: '#F53C3C',
+  green: '#55B046',
+  red: '#F53C3C',
   white: '#FFFFFF',
-  success: '#55B046',
-  alert: '#FFA800',
-  error: '#F31A1A',
 }
 
 export const shadows = {
@@ -38,8 +33,6 @@ export const fontTypes = {
 const theme: StyledDefaultTheme = {
   colors: themeColors,
   fontTypes,
-  fontFamily: 'Nunito Sans',
-  gutter: 16,
   shadows,
   spacing: (number) => number * 8,
 }

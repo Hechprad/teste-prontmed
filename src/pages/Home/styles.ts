@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
-import { Text as TextCmp } from 'components'
-import { FiLoader } from 'react-icons/fi'
+import { Loading as LoadingCmp, Text as TextCmp } from 'components'
 
 export const Content = styled.div`
   display: flex;
@@ -38,25 +37,16 @@ export const ButtonWrapper = styled.div`
   flex-direction: column;
   height: calc(100vh - 180px);
 
+  & > button {
+    background-color: ${({ theme: { colors } }) => colors.red};
+  }
+
   & > p {
     margin-bottom: ${({ theme: { spacing } }) => spacing(3)}px;
   }
 `
 
-export const LoadingIcon = styled(FiLoader)`
+export const Loading = styled(LoadingCmp)`
   min-width: 72px;
   height: calc(100vh - 180px);
-  color: ${({ theme: { colors } }) => colors.blue1};
-
-  animation: spin-animation 1.2s infinite;
-  animation-timing-function: linear;
-
-  @keyframes spin-animation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(359deg);
-    }
-  }
 `
