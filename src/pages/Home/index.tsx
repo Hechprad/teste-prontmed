@@ -5,10 +5,11 @@ import useGetTodos from 'hooks/useGetTodos'
 import useCheckTodo from 'hooks/useCheckTodo'
 import useDeleteTodo from 'hooks/useDeleteTodo'
 import { TodoInterface } from 'store/modules/todos/types'
-import { Button, Dropdown, Menu, Text, TodoItem } from 'components'
+import { Button, Menu, Text, TodoItem } from 'components'
 
 import AddDropdown from './Dropdowns/AddDropdown'
 import EditDropdown from './Dropdowns/EditDropdown'
+import SearchDropdown from './Dropdowns/SearchDropdown'
 
 import { ButtonWrapper, Content, LoadingIcon, Title, Ul } from './styles'
 
@@ -94,7 +95,7 @@ const Home: React.FC = () => {
         {getContent()}
       </Content>
       <AddDropdown isOpen={isAddOpen} handleClose={() => setIsAddOpen(false)} />
-      <Dropdown
+      <SearchDropdown
         isOpen={isSearchOpen}
         handleClose={() => setIsSearchOpen(false)}
       />
