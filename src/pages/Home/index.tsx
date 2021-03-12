@@ -1,71 +1,109 @@
 import React from 'react'
 import { v4 } from 'uuid'
 
-import { Dropdown, Menu, TodoItem } from 'components'
-import useGetTodos from 'hooks/useGetTodos'
-
 import api from 'services/api'
-
+import useGetTodos from 'hooks/useGetTodos'
 import { TodoInterface } from 'store/modules/todos/types'
-import { Title, Wrapper } from './styles'
+import { Button, Dropdown, Menu, Text, TodoItem } from 'components'
+
+import AddDropdown from './Dropdowns/AddDropdown'
+
+import { ButtonWrapper, Content, LoadingIcon, Title, Ul } from './styles'
 
 const Home: React.FC = () => {
-  const { todos, loadTodos } = useGetTodos()
+  const { todos, loadTodos, isLoading, hasError } = useGetTodos()
   const [isAddOpen, setIsAddOpen] = React.useState<boolean>(false)
   const [isEditOpen, setIsEditOpen] = React.useState<boolean>(false)
   const [isSearchOpen, setIsSearchOpen] = React.useState<boolean>(false)
 
-  const deleteTodo = async (id: number): Promise<void> => {
-    await api
-      .delete(`/todos/${id}`)
-      .then(() => loadTodos())
-      .catch((e) => {
-        throw new Error(e)
-      })
-  }
+  const deleteTodo = React.useCallback(
+    async (id: number): Promise<void> => {
+      await api
+        .delete(`/todos/${id}`)
+        .then(() => loadTodos())
+        .catch((e) => {
+          throw new Error(e)
+        })
+    },
+    [loadTodos]
+  )
 
-  const checkTodo = async (todo: TodoInterface): Promise<void> => {
-    await api
-      .put(`/todos/${todo.id}`, {
-        name: todo.name,
-        completed: !todo.completed,
-      })
-      .then(() => loadTodos())
-      .catch((e) => {
-        throw new Error(e)
-      })
+  const checkTodo = React.useCallback(
+    async (todo: TodoInterface): Promise<void> => {
+      await api
+        .put(`/todos/${todo.id}`, {
+          name: todo.name,
+          completed: !todo.completed,
+        })
+        .then(() => loadTodos())
+        .catch((e) => {
+          throw new Error(e)
+        })
+    },
+    [loadTodos]
+  )
+
+  const renderList = React.useMemo(
+    () => (
+      <Ul>
+        {todos
+          .sort((a, b) => +a.completed - +b.completed)
+          .map((todo) => (
+            <TodoItem
+              key={v4()}
+              id={todo.id}
+              title={todo.name}
+              checked={todo.completed}
+              handleEditClick={() => setIsEditOpen(true)}
+              handleCheckClick={() => checkTodo(todo)}
+              handleDeleteClick={() => deleteTodo(todo.id)}
+            />
+          ))}
+      </Ul>
+    ),
+    [checkTodo, deleteTodo, todos]
+  )
+
+  const renderTryAgainButton = () => (
+    <ButtonWrapper>
+      <Text>Ops...</Text>
+      <Button buttonName="Try again" onClick={() => loadTodos()} />
+    </ButtonWrapper>
+  )
+
+  const renderLoading = () => <LoadingIcon />
+
+  const getContent = () => {
+    if (isLoading) {
+      return renderLoading()
+    }
+
+    if (!isLoading && hasError) {
+      return renderTryAgainButton()
+    }
+
+    if (!isLoading && !hasError && todos.length) {
+      return renderList
+    }
+
+    return renderLoading()
   }
 
   return (
     <>
-      <Wrapper>
+      <Content>
         <Title type="heading">All Tasks</Title>
         <Menu
           handleAddOpen={() => setIsAddOpen(true)}
           handleSearchOpen={() => setIsSearchOpen(true)}
         />
-        <ul>
-          {todos.length
-            ? todos
-                .sort((a, b) => +a.completed - +b.completed)
-                .map((todo) => (
-                  <TodoItem
-                    key={v4()}
-                    title={todo.name}
-                    checked={todo.completed}
-                    handleEditClick={() => setIsEditOpen(true)}
-                    handleCheckClick={() => checkTodo(todo)}
-                    handleDeleteClick={() => deleteTodo(todo.id)}
-                  />
-                ))
-            : null}
-        </ul>
-      </Wrapper>
+        {getContent()}
+      </Content>
+      <AddDropdown isOpen={isAddOpen} handleClose={() => setIsAddOpen(false)} />
       <Dropdown
         isOpen={isSearchOpen}
         handleClose={() => setIsSearchOpen(false)}
       />
-      <Dropdown isOpen={isAddOpen} handleClose={() => setIsAddOpen(false)} />
       <Dropdown isOpen={isEditOpen} handleClose={() => setIsEditOpen(false)} />
     </>
   )
