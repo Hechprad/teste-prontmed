@@ -3,10 +3,10 @@
 exports[`Home should renders correctly 1`] = `
 Array [
   <div
-    className="sc-lmoMRL hFYmoP"
+    className="sc-giIncl kepWOA"
   >
     <h1
-      className="sc-bdfBwQ dbsWih sc-iJuUWI kfIkBd"
+      className="sc-bdfBwQ dbsWih sc-ezrdKe loaAtj"
       color="black"
       type="heading"
     >
@@ -105,7 +105,7 @@ Array [
       </div>
     </div>
     <ul
-      className="sc-giIncl fCIYYg"
+      className="sc-bYEvPH diUALu"
     >
       <li
         className="sc-crrsfI nHtIm"
@@ -364,12 +364,12 @@ Array [
             value=""
           />
           <button
-            className="sc-gsTCUz exuHsw sc-idOhPF kTJAgA"
+            className="sc-gsTCUz ehKRyO sc-dIUggk idQFbO"
             disabled={true}
             onClick={[Function]}
           >
             <svg
-              className="sc-dIUggk dozoRS"
+              className="sc-hHftDr gQJrLR"
               fill="none"
               height="1em"
               stroke="currentColor"
@@ -423,7 +423,7 @@ Array [
         className="sc-gKsewC dElHde"
       >
         <p
-          className="sc-bdfBwQ deLoMA sc-bBXqnf hjVzmJ"
+          className="sc-bdfBwQ deLoMA sc-cxFLnm fyvzqG"
           color="black"
           type="body"
         >
@@ -434,74 +434,25 @@ Array [
         className="sc-jSgupP kDIAus"
       >
         <div
-          className="sc-fKFyDc eOnbXh"
+          className="sc-iwyYcG ehMonG"
         >
           <input
-            className="sc-iqHYGH egqCRi sc-iwyYcG bfOtRt"
+            className="sc-iqHYGH egqCRi sc-lmoMRL dislZm"
             onChange={[Function]}
             placeholder="TODO ID"
             value=""
           />
           <button
-            className="sc-gsTCUz exuHsw sc-cxFLnm kYSzYh"
-            disabled={false}
+            className="sc-gsTCUz ehKRyO sc-iJuUWI bKPCkQ"
+            disabled={true}
             onClick={[Function]}
           >
             Search
           </button>
         </div>
         <div
-          className="sc-fKFyDc eOnbXh"
-        >
-          <li
-            className="sc-crrsfI nHtIm"
-          >
-            <div
-              className="sc-dQppl dJoByg"
-            />
-            <div
-              className="sc-bqyKva joiINn"
-            >
-              <svg
-                className="sc-hBEYos licVqv"
-                fill="none"
-                height="1em"
-                onClick={[Function]}
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                style={
-                  Object {
-                    "color": undefined,
-                  }
-                }
-                viewBox="0 0 24 24"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <polyline
-                  points="3 6 5 6 21 6"
-                />
-                <path
-                  d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
-                />
-                <line
-                  x1="10"
-                  x2="10"
-                  y1="11"
-                  y2="17"
-                />
-                <line
-                  x1="14"
-                  x2="14"
-                  y1="11"
-                  y2="17"
-                />
-              </svg>
-            </div>
-          </li>
-        </div>
+          className="sc-iwyYcG ehMonG"
+        />
       </div>
     </div>
   </div>,
@@ -520,7 +471,7 @@ Array [
         className="sc-gKsewC dElHde"
       >
         <p
-          className="sc-bdfBwQ deLoMA sc-dmlrTW gKMqzc"
+          className="sc-bdfBwQ deLoMA sc-kfzAmx glnuDD"
           color="black"
           type="body"
         >
@@ -531,7 +482,7 @@ Array [
         className="sc-jSgupP kDIAus"
       >
         <div
-          className="sc-hHftDr cQEanm"
+          className="sc-dmlrTW fsEKZe"
         >
           <p
             className="sc-bdfBwQ deLoMA"
@@ -548,7 +499,7 @@ Array [
             value=""
           />
           <button
-            className="sc-gsTCUz exuHsw sc-kfzAmx bqbZcu"
+            className="sc-gsTCUz ehKRyO sc-bBXqnf fOVJdl"
             disabled={true}
             onClick={[Function]}
           >

@@ -4,14 +4,19 @@ import { Dropdown, Text, TextInput } from 'components'
 import useUpdateTodoName from 'hooks/useUpdateTodoName'
 
 import EditDropdownProps from './types'
-import { Button, Title, Wrapper } from './styles'
+import { Button, Loading, Title, Wrapper } from './styles'
 
 const EditDropdown: React.FC<EditDropdownProps> = ({
   isOpen,
   handleClose,
   selectedTodo,
 }) => {
-  const { updateTodoName } = useUpdateTodoName()
+  const {
+    updateTodoName,
+    isUpdateLoading,
+    hasUpdateError,
+    deleted,
+  } = useUpdateTodoName()
   const [newTodoName, setNewTodoName] = React.useState<string>('')
 
   React.useEffect(() => {
@@ -21,7 +26,39 @@ const EditDropdown: React.FC<EditDropdownProps> = ({
     setNewTodoName(selectedTodo.name)
   }, [isOpen, selectedTodo.name])
 
+  React.useEffect(() => {
+    if (deleted) {
+      handleClose()
+    }
+  }, [deleted, handleClose])
+
   const renderTitle = () => <Title type="body">Update todo name</Title>
+
+  const renderUpdateButton = () => (
+    <Button
+      tryAgain={hasUpdateError}
+      disabled={
+        newTodoName.length === 0 ||
+        selectedTodo.name === newTodoName ||
+        isUpdateLoading
+      }
+      onClick={() => {
+        if (newTodoName.length > 0 && selectedTodo.name !== newTodoName) {
+          updateTodoName(selectedTodo, newTodoName)
+        }
+      }}
+    >
+      {hasUpdateError ? 'Try again' : 'Update'}
+    </Button>
+  )
+
+  const getContent = () => {
+    if (isUpdateLoading) {
+      return <Loading />
+    }
+
+    return renderUpdateButton()
+  }
 
   return (
     <Dropdown
@@ -36,19 +73,7 @@ const EditDropdown: React.FC<EditDropdownProps> = ({
           value={newTodoName}
           handleChange={setNewTodoName}
         />
-        <Button
-          disabled={
-            newTodoName.length === 0 || selectedTodo.name === newTodoName
-          }
-          onClick={() => {
-            if (newTodoName.length > 0 && selectedTodo.name !== newTodoName) {
-              updateTodoName(selectedTodo, newTodoName)
-              handleClose()
-            }
-          }}
-        >
-          Update
-        </Button>
+        {getContent()}
       </Wrapper>
     </Dropdown>
   )

@@ -1,7 +1,11 @@
 import styled from 'styled-components'
 import { FiPlusCircle } from 'react-icons/fi'
 
-import { Button as ButtonCmp, Text as TextCmp } from 'components'
+import {
+  Button as ButtonCmp,
+  Loading as LoadingCmp,
+  Text as TextCmp,
+} from 'components'
 
 export const Wrapper = styled.div`
   height: 100%;
@@ -14,14 +18,18 @@ export const Wrapper = styled.div`
 export const Title = styled(TextCmp)`
   padding: ${({ theme: { spacing } }) => spacing(2)}px;
 `
+export const Loading = styled(LoadingCmp)`
+  margin-bottom: ${({ theme: { spacing } }) => spacing(2)}px;
+`
 
-export const Button = styled(ButtonCmp)`
-  width: 54px;
+export const Button = styled(ButtonCmp)<{ tryAgain?: boolean }>`
+  width: ${({ tryAgain }) => (tryAgain ? '100px' : '54px')};
   height: 54px;
   margin: ${({ theme: { spacing } }) => spacing(2)}px 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: ${({ theme: { colors } }) => colors.white};
 `
 
 export const AddTodoIcon = styled(FiPlusCircle)`
