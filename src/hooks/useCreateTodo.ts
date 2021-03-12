@@ -16,6 +16,9 @@ const useCreateTodo = (): UseCreateTodo => {
       .then(() => {
         loadTodos()
       })
+      .catch((e) => {
+        throw new Error(e)
+      })
   }
 
   return { createTodo }

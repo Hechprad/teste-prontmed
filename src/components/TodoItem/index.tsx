@@ -16,6 +16,8 @@ const TodoItem: React.FC<TodoItemProps> = ({
   id,
   title,
   checked,
+  noEdit = false,
+  noCheck = false,
   handleCheckClick,
   handleEditClick,
   handleDeleteClick,
@@ -23,13 +25,22 @@ const TodoItem: React.FC<TodoItemProps> = ({
 }) => (
   <Li {...rest}>
     <LeftContent>
-      <CheckIcon checked={checked} onClick={() => handleCheckClick()} />
-      <Text>
-        ID: {id} - {title}
-      </Text>
+      {!noCheck ? (
+        <CheckIcon
+          checked={checked}
+          onClick={() => handleCheckClick && handleCheckClick()}
+        />
+      ) : null}
+      {id && title.length > 0 ? (
+        <Text>
+          ID: {id} - {title}
+        </Text>
+      ) : null}
     </LeftContent>
     <RightContent>
-      <EditIcon onClick={() => handleEditClick()} />
+      {!noEdit ? (
+        <EditIcon onClick={() => handleEditClick && handleEditClick()} />
+      ) : null}
       <TrashIcon onClick={() => handleDeleteClick()} />
     </RightContent>
   </Li>

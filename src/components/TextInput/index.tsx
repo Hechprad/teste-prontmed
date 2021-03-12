@@ -5,14 +5,13 @@ import Input from './styles'
 
 const TextInput: React.FC<TextInputProps> = ({
   value,
-  labelText,
+  placeholder,
   handleChange,
   ...rest
 }) => (
   <Input
-    name={labelText.toLowerCase()}
     value={value}
-    placeholder="New todo name"
+    placeholder={placeholder}
     onChange={(event) => handleChange(event.target.value)}
     {...rest}
   />

@@ -26,7 +26,7 @@ const AddDropdown: React.FC<AddDropdownProps> = ({ isOpen, handleClose }) => {
     >
       <Wrapper>
         <TextInput
-          labelText="label"
+          placeholder="New todo name"
           value={todoName}
           handleChange={setTodoName}
         />
