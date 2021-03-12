@@ -14,11 +14,7 @@ export const Title = styled(TextCmp)`
   padding: ${({ theme: { spacing } }) => spacing(2)}px;
 `
 
-export const Ul = styled.li`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+export const Ul = styled.ul`
   height: calc(100vh - 180px);
   overflow-y: auto;
 

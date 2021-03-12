@@ -1,9 +1,9 @@
 import React from 'react'
 import { v4 } from 'uuid'
 
-import api, { baseUrlTodos } from 'services/api'
 import useGetTodos from 'hooks/useGetTodos'
-import { TodoInterface } from 'store/modules/todos/types'
+import useCheckTodo from 'hooks/useCheckTodo'
+import useDeleteTodo from 'hooks/useDeleteTodo'
 import { Button, Dropdown, Menu, Text, TodoItem } from 'components'
 
 import AddDropdown from './Dropdowns/AddDropdown'
@@ -11,6 +11,8 @@ import AddDropdown from './Dropdowns/AddDropdown'
 import { ButtonWrapper, Content, LoadingIcon, Title, Ul } from './styles'
 
 const Home: React.FC = () => {
+  const { checkTodo } = useCheckTodo()
+  const { deleteTodo } = useDeleteTodo()
   const { todos, loadTodos, isLoading, hasError } = useGetTodos()
   const [isAddOpen, setIsAddOpen] = React.useState<boolean>(false)
   const [isEditOpen, setIsEditOpen] = React.useState<boolean>(false)
@@ -22,33 +24,6 @@ const Home: React.FC = () => {
       loadTodos()
     }
   }, [loadTodos, todos, hasError, isLoading])
-
-  const deleteTodo = React.useCallback(
-    async (id: number): Promise<void> => {
-      await api
-        .delete(`${baseUrlTodos}/${id}`)
-        .then(() => loadTodos())
-        .catch((e) => {
-          throw new Error(e)
-        })
-    },
-    [loadTodos]
-  )
-
-  const checkTodo = React.useCallback(
-    async (todo: TodoInterface): Promise<void> => {
-      await api
-        .put(`${baseUrlTodos}/${todo.id}`, {
-          name: todo.name,
-          completed: !todo.completed,
-        })
-        .then(() => loadTodos())
-        .catch((e) => {
-          throw new Error(e)
-        })
-    },
-    [loadTodos]
-  )
 
   const renderList = React.useMemo(
     () => (
