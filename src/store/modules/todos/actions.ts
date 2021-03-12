@@ -12,6 +12,14 @@ export function SetTodosList(
   }
 }
 
+export function SetTodosListIsLoading(): {
+  type: string
+} {
+  return {
+    type: Types.SET_TODOS_LOADING,
+  }
+}
+
 export function SetTodosListError(): {
   type: string
 } {

@@ -1,5 +1,6 @@
 export const Types = {
   SET_TODOS: 'SET_TODOS',
+  SET_TODOS_LOADING: 'SET_TODOS_LOADING',
   SET_TODOS_ERROR: 'SET_TODOS_ERROR',
 }
 
@@ -18,5 +19,6 @@ export interface ActionInterface {
 
 export interface TodoState {
   todos: TodoInterface[]
+  isLoading: boolean
   hasError: boolean
 }
