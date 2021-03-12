@@ -4,9 +4,11 @@ import { v4 } from 'uuid'
 import useGetTodos from 'hooks/useGetTodos'
 import useCheckTodo from 'hooks/useCheckTodo'
 import useDeleteTodo from 'hooks/useDeleteTodo'
+import { TodoInterface } from 'store/modules/todos/types'
 import { Button, Dropdown, Menu, Text, TodoItem } from 'components'
 
 import AddDropdown from './Dropdowns/AddDropdown'
+import EditDropdown from './Dropdowns/EditDropdown'
 
 import { ButtonWrapper, Content, LoadingIcon, Title, Ul } from './styles'
 
@@ -17,6 +19,13 @@ const Home: React.FC = () => {
   const [isAddOpen, setIsAddOpen] = React.useState<boolean>(false)
   const [isEditOpen, setIsEditOpen] = React.useState<boolean>(false)
   const [isSearchOpen, setIsSearchOpen] = React.useState<boolean>(false)
+  const [selectedTodo, setSelectedTodo] = React.useState<TodoInterface>({
+    id: 0,
+    name: '',
+    completed: false,
+    inserted_at: '',
+    updated_at: '',
+  })
 
   // get todos list
   React.useEffect(() => {
@@ -36,7 +45,10 @@ const Home: React.FC = () => {
               id={todo.id}
               title={todo.name}
               checked={todo.completed}
-              handleEditClick={() => setIsEditOpen(true)}
+              handleEditClick={() => {
+                setIsEditOpen(true)
+                setSelectedTodo(todo)
+              }}
               handleCheckClick={() => checkTodo(todo)}
               handleDeleteClick={() => deleteTodo(todo.id)}
             />
@@ -86,7 +98,11 @@ const Home: React.FC = () => {
         isOpen={isSearchOpen}
         handleClose={() => setIsSearchOpen(false)}
       />
-      <Dropdown isOpen={isEditOpen} handleClose={() => setIsEditOpen(false)} />
+      <EditDropdown
+        isOpen={isEditOpen}
+        selectedTodo={selectedTodo}
+        handleClose={() => setIsEditOpen(false)}
+      />
     </>
   )
 }

@@ -1,6 +1,6 @@
 interface TextInputProps {
   value: string
-  labelText: string
+  placeholder: string
   handleChange: React.Dispatch<React.SetStateAction<string>>
 }
 
