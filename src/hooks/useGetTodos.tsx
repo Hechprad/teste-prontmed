@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 
-import api from 'services/api'
+import api, { baseUrlTodos } from 'services/api'
 import { useTypedSelector } from 'store/modules/rootState'
 import {
   SetTodosList,
@@ -27,7 +27,7 @@ const useGetTodos = (): UseGetTodos => {
   const loadTodos = React.useCallback(async (): Promise<void> => {
     dispatch(SetTodosListIsLoading())
     await api
-      .get('/todos')
+      .get(baseUrlTodos)
       .then(
         (response) =>
           response.data.length > 0 && dispatch(SetTodosList(response.data))
@@ -36,10 +36,6 @@ const useGetTodos = (): UseGetTodos => {
         dispatch(SetTodosListError())
       })
   }, [dispatch])
-
-  React.useEffect(() => {
-    loadTodos()
-  }, [loadTodos])
 
   return { todos, hasError, isLoading, loadTodos }
 }

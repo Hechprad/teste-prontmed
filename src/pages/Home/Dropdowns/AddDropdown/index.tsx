@@ -1,6 +1,6 @@
 import React from 'react'
 
-import api from 'services/api'
+import api, { baseUrlTodos } from 'services/api'
 import useGetTodos from 'hooks/useGetTodos'
 import { Dropdown, TextInput } from 'components'
 
@@ -19,7 +19,7 @@ const AddDropdown: React.FC<AddDropdownProps> = ({ isOpen, handleClose }) => {
 
   const createTodo = async (name: string): Promise<void> => {
     await api
-      .post(`/todos`, {
+      .post(baseUrlTodos, {
         name,
       })
       .then(() => {

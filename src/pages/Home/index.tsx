@@ -1,7 +1,7 @@
 import React from 'react'
 import { v4 } from 'uuid'
 
-import api from 'services/api'
+import api, { baseUrlTodos } from 'services/api'
 import useGetTodos from 'hooks/useGetTodos'
 import { TodoInterface } from 'store/modules/todos/types'
 import { Button, Dropdown, Menu, Text, TodoItem } from 'components'
@@ -16,10 +16,17 @@ const Home: React.FC = () => {
   const [isEditOpen, setIsEditOpen] = React.useState<boolean>(false)
   const [isSearchOpen, setIsSearchOpen] = React.useState<boolean>(false)
 
+  // get todos list
+  React.useEffect(() => {
+    if (!todos.length && !hasError && !isLoading) {
+      loadTodos()
+    }
+  }, [loadTodos, todos, hasError, isLoading])
+
   const deleteTodo = React.useCallback(
     async (id: number): Promise<void> => {
       await api
-        .delete(`/todos/${id}`)
+        .delete(`${baseUrlTodos}/${id}`)
         .then(() => loadTodos())
         .catch((e) => {
           throw new Error(e)
@@ -31,7 +38,7 @@ const Home: React.FC = () => {
   const checkTodo = React.useCallback(
     async (todo: TodoInterface): Promise<void> => {
       await api
-        .put(`/todos/${todo.id}`, {
+        .put(`${baseUrlTodos}/${todo.id}`, {
           name: todo.name,
           completed: !todo.completed,
         })
