@@ -1,4 +1,4 @@
-# Prontmed - Front-end 📝
+# Prontmed - Frontend 📝
 
 #### Propósito do projeto
 
@@ -31,5 +31,8 @@ Disponibilizar uma lista de tarefas.
 ```shell
   yarn test:coverage
 ```
+
+- Requisitos
+  -  Subir o docker-compose do backend fornecido pela Prontmed
 
 ---
